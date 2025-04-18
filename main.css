@@ -25,14 +25,12 @@ body {
     transition: background 0.5s ease;
 }
 
-/* Light Theme */
 body.light-theme {
     --text-color: #2c3e50;
     --background-color: #f4f7fa;
     background: linear-gradient(135deg, #f4f7fa 0%, #e0e7ff 50%, #f4f7fa 100%);
 }
 
-/* Theme Toggle */
 .theme-toggle {
     position: fixed;
     top: 20px;
@@ -41,6 +39,11 @@ body.light-theme {
     cursor: pointer;
     font-size: 24px;
     color: var(--text-color);
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.2);
 }
 
 .theme-toggle .fa-moon {
@@ -55,19 +58,17 @@ body.light-theme .theme-toggle .fa-moon {
     display: inline;
 }
 
-/* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 20px;
+    padding: 15px 20px;
     background: rgba(10, 10, 20, 0.9);
     display: flex;
     justify-content: space-between;
@@ -82,15 +83,16 @@ body.light-theme .navbar {
 }
 
 .navbar .logo {
-    font-size: 24px;
+    font-size: 1.8rem;
     font-weight: bold;
     color: var(--primary-color);
 }
 
 .navbar .nav-links a {
-    margin-left: 30px;
+    margin-left: 25px;
     text-decoration: none;
     color: var(--text-color);
+    font-size: 1rem;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -102,10 +104,8 @@ body.light-theme .navbar .nav-links a {
 .navbar .nav-links a.active {
     color: var(--primary-color);
     transform: translateY(-2px);
-    display: inline-block;
 }
 
-/* Hamburger Menu */
 .hamburger {
     display: none;
     cursor: pointer;
@@ -124,7 +124,6 @@ body.light-theme .hamburger span {
     background: var(--dark-color);
 }
 
-/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
@@ -137,20 +136,23 @@ body.light-theme .hamburger span {
 }
 
 .hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
     animation: fadeInUp 1s ease-out;
 }
 
 .hero-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #ccc;
     animation: fadeInUp 1.2s ease-out;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    max-width: 600px;
     animation: fadeInUp 1.4s ease-out;
 }
 
@@ -160,25 +162,26 @@ body.light-theme .hamburger span {
 
 .hero .cta-button {
     display: inline-block;
-    padding: 15px 40px;
+    padding: 12px 35px;
     background: var(--primary-color);
     color: white;
     text-decoration: none;
     border-radius: 50px;
     font-weight: bold;
-    transition: transform 0.3s ease, background 0.3s ease;
+    font-size: 1rem;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
     animation: fadeInUp 1.6s ease-out;
 }
 
 .hero .cta-button:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     background: var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Scroll Down Animation */
 .scroll-down {
     position: absolute;
-    bottom: 40px;
+    bottom: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -186,42 +189,43 @@ body.light-theme .hamburger span {
 
 .scroll-down span {
     display: block;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     background: var(--text-color);
     border-radius: 50%;
-    margin: 5px 0;
-    animation: scrollDown 1.5s infinite;
+    margin: 6px 0;
+    animation: scrollDown 2s infinite;
 }
 
 .scroll-down span:nth-child(2) {
-    animation-delay: 0.2s;
+    animation-delay: 0.3s;
 }
 
 .scroll-down span:nth-child(3) {
-    animation-delay: 0.4s;
+    animation-delay: 0.6s;
 }
 
 @keyframes scrollDown {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(20px); opacity: 0; }
+    0% { transform: translateY(0); opacity: 0.8; }
+    50% { transform: translateY(15px); opacity: 0.2; }
+    100% { transform: translateY(0); opacity: 0.8; }
 }
 
-/* About Section */
 .about {
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 .about h2 {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    font-family: 'Playfair Display', serif;
 }
 
 .about-content {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 40px;
 }
 
 .about-text {
@@ -229,8 +233,13 @@ body.light-theme .hamburger span {
 }
 
 .about-text p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+body.light-theme .about-text p {
+    color: #4a5568;
 }
 
 .about-image {
@@ -239,46 +248,44 @@ body.light-theme .hamburger span {
 }
 
 .about-image img {
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid var(--primary-color);
-    transition: transform 0.5s ease;
-}
-
-.about-image img:hover {
-    transform: rotate(360deg);
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .skills {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
+    margin-top: 20px;
 }
 
 .skills span {
     background: var(--primary-color);
     color: white;
-    padding: 5px 15px;
+    padding: 6px 16px;
     border-radius: 20px;
     font-size: 0.9rem;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .skills span:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+    background: var(--secondary-color);
 }
 
-/* Certificates Section */
 .certificates {
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 .certificates h2 {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    font-family: 'Playfair Display', serif;
 }
 
 .certificates-slider {
@@ -299,22 +306,24 @@ body.light-theme .hamburger span {
 }
 
 .certificate-wrapper {
-    min-width: 450px; /* Reduced from 600px */
+    min-width: 400px;
     perspective: 1000px;
 }
 
 .certificate {
     background: #fff;
-    border: 6px solid #e0e7ff; /* Reduced border size */
+    border: 5px solid #e0e7ff;
     border-radius: 8px;
-    padding: 20px; /* Reduced padding */
+    padding: 20px;
     position: relative;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Smaller shadow */
-    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
-/* Background Shapes */
+.certificate:hover {
+    transform: scale(1.02);
+}
+
 .certificate::before,
 .certificate::after {
     content: '';
@@ -325,34 +334,32 @@ body.light-theme .hamburger span {
 }
 
 .certificate::before {
-    width: 100px; /* Reduced size */
-    height: 100px;
-    top: -20px;
-    left: -20px;
+    width: 80px;
+    height: 80px;
+    top: -15px;
+    left: -15px;
 }
 
 .certificate::after {
-    width: 80px; /* Reduced size */
-    height: 80px;
-    bottom: -15px;
-    right: -15px;
+    width: 60px;
+    height: 60px;
+    bottom: -10px;
+    right: -10px;
 }
 
-/* Certificate Header */
 .certificate-header {
     text-align: center;
-    margin-bottom: 20px; /* Reduced margin */
+    margin-bottom: 15px;
 }
 
 .certificate-header h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 16px; /* Reduced font size */
+    font-size: 14px;
     color: #4a5568;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
 }
 
-/* Certificate Body */
 .certificate-body {
     text-align: center;
     position: relative;
@@ -360,34 +367,33 @@ body.light-theme .hamburger span {
 }
 
 .intro-text {
-    font-size: 12px; /* Reduced font size */
+    font-size: 11px;
     color: #4a5568;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .recipient-name {
     font-family: 'Playfair Display', serif;
-    font-size: 28px; /* Reduced font size */
+    font-size: 26px;
     color: #2d3748;
-    margin: 10px 0;
+    margin: 8px 0;
     font-weight: 700;
 }
 
 .course-text {
-    font-size: 12px; /* Reduced font size */
+    font-size: 11px;
     color: #4a5568;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .course-title {
     font-family: 'Playfair Display', serif;
-    font-size: 18px; /* Reduced font size */
+    font-size: 16px;
     color: #2d3748;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-/* Certificate Footer */
 .certificate-footer {
     display: flex;
     justify-content: space-between;
@@ -399,31 +405,31 @@ body.light-theme .hamburger span {
 .signature-section {
     display: flex;
     align-items: center;
-    gap: 10px; /* Reduced gap */
+    gap: 8px;
 }
 
 .signature i.fa-signature {
-    font-size: 24px; /* Adjusted size */
+    font-size: 22px;
     color: #4a5568;
 }
 
 .signature p {
-    font-size: 10px; /* Reduced font size */
+    font-size: 9px;
     color: #4a5568;
-    margin-top: 4px;
+    margin-top: 3px;
 }
 
 .signature .title {
-    font-size: 8px; /* Reduced font size */
+    font-size: 7px;
     color: #718096;
 }
 
 .seal i.fa-stamp {
-    font-size: 30px; /* Adjusted size */
+    font-size: 28px;
     color: #f6e05e;
     background: #fff;
     border-radius: 50%;
-    padding: 6px;
+    padding: 5px;
 }
 
 .logo-date {
@@ -431,21 +437,49 @@ body.light-theme .hamburger span {
 }
 
 .logo img {
-    width: 30px; /* Reduced size */
-    height: 30px;
-    margin-bottom: 6px;
+    width: 28px;
+    height: 28px;
+    margin-bottom: 5px;
 }
 
 .date {
-    font-size: 10px; /* Reduced font size */
+    font-size: 9px;
     color: #4a5568;
 }
 
-/* Footer */
+.projects {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-family: 'Playfair Display', serif;
+}
+
+.project-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.project-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.project-links a:hover {
+    color: var(--secondary-color);
+    transform: translateX(5px);
+}
+
 footer {
     background: rgba(10, 10, 20, 0.9);
     color: var(--text-color);
-    padding: 50px 0;
+    padding: 40px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -462,21 +496,21 @@ body.light-theme footer {
     margin: 0 auto;
     padding: 0 20px;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 25px;
 }
 
 .footer-section {
     flex: 1;
-    min-width: 250px;
+    min-width: 220px;
 }
 
 .footer-section h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
 }
 
 .footer-section p {
-    font-size: 1rem;
+    font-size: 0.95rem;
 }
 
 .footer-section a {
@@ -496,23 +530,23 @@ body.light-theme .footer-section a {
 .social-links {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 .social-links a {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .social-links a i {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .footer-bottom {
     text-align: center;
-    margin-top: 30px;
-    padding-top: 20px;
+    margin-top: 25px;
+    padding-top: 15px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -521,26 +555,24 @@ body.light-theme .footer-bottom {
 }
 
 .footer-bottom p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
-/* Animations */
 @keyframes fadeInUp {
     0% { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .navbar .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 70px;
+        top: 60px;
         left: 0;
         width: 100%;
         background: rgba(10, 10, 20, 0.9);
-        padding: 20px 0;
+        padding: 15px 0;
     }
 
     body.light-theme .navbar .nav-links {
@@ -552,7 +584,7 @@ body.light-theme .footer-bottom {
     }
 
     .navbar .nav-links a {
-        margin: 10px 0;
+        margin: 8px 0;
         text-align: center;
     }
 
@@ -573,11 +605,15 @@ body.light-theme .footer-bottom {
     }
 
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .hero-content h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
     }
 
     .about-content {
@@ -603,7 +639,7 @@ body.light-theme .footer-bottom {
     }
 
     .course-title {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .certificate-footer {
@@ -614,7 +650,7 @@ body.light-theme .footer-bottom {
 
     .signature-section {
         flex-direction: column;
-        gap: 8px;
+        gap: 6px;
     }
 
     .logo-date {
@@ -629,6 +665,6 @@ body.light-theme .footer-bottom {
     .social-links {
         flex-direction: row;
         justify-content: center;
-        gap: 20px;
+        gap: 15px;
     }
 }
